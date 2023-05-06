@@ -1,0 +1,39 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="6">
+            <item index="0" class="java.lang.String" itemvalue="altgraph" />
+            <item index="1" class="java.lang.String" itemvalue="pyinstaller" />
+            <item index="2" class="java.lang.String" itemvalue="future" />
+            <item index="3" class="java.lang.String" itemvalue="pywin32-ctypes" />
+            <item index="4" class="java.lang.String" itemvalue="PyMySQL" />
+            <item index="5" class="java.lang.String" itemvalue="pyinstaller-hooks-contrib" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E303" />
+          <option value="E701" />
+          <option value="E703" />
+          <option value="E501" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="requests" />
+          <option value="BeautifulSoup" />
+          <option value="BiZhi.*" />
+          <option value="monitor.monitor.ifconfig" />
+        </list>
+      </option>
+    </inspection_tool>
+  </profile>
+</component>
