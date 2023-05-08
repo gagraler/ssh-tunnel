@@ -1,6 +1,7 @@
 package main
 
 import (
+	"dev-proxy/config"
 	"fmt"
 	"golang.org/x/crypto/ssh"
 	"io"
@@ -8,16 +9,23 @@ import (
 	"net"
 )
 
+func init() {
+	config.InitConfig()
+}
+
+var (
+	// SSH服务器地址
+	sshServer = config.GetConfig("server")
+	// SSH服务器端口
+	sshPort = config.GetConfig("port")
+	// SSH用户
+	sshUser = config.GetConfig("user")
+	// SSH密码
+	sshPassword = config.GetConfig("keington")
+)
+
 func main() {
-	// SSH服务器的地址
-	//sshServer := "keington-dev-1.dbsecurity.com.cn"
-	sshServer := "61.133.233.142"
-	// SSH服务器的端口号
-	sshPort := 1220
-	// SSH服务器的用户名
-	sshUser := "root"
-	// SSH服务器的密码
-	sshPassword := "keington"
+
 	// 远程服务器开放的端口列表
 	remotePorts := map[int]map[string]int{
 		3306:  {"MySQL": 3306},
@@ -33,6 +41,7 @@ func main() {
 		},
 		HostKeyCallback: ssh.InsecureIgnoreHostKey(),
 	}
+
 	sshConn, err := ssh.Dial("tcp", fmt.Sprintf("%s:%d", sshServer, sshPort), sshConfig)
 	if err != nil {
 		log.Fatalf("Failed to dial SSH server: %s", err)
