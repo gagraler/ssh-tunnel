@@ -1,4 +1,4 @@
-module dev-proxy
+module github.com/keington/ssh-tunnel
 
 go 1.18
 
